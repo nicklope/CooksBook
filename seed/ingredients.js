@@ -3,11 +3,19 @@ const Ingredient = require('../models/Ingredient')
 
 const main = async () => {
   const ingredients = [
+    { ingredientName: 'broccoli' },
+    { ingredientName: 'shrimp' },
+    { ingredientName: 'linguini' },
+    { ingredientName: 'garlic' },
+    { ingredientName: 'chicken stock' },
+    { ingredientName: 'olive oil' },
+    { ingredientName: 'red pepper' },
+    { ingredientName: 'garlic powder' },
+    { ingredientName: 'chardonnay' },
     { ingredientName: 'salmon' },
     { ingredientName: 'sesame oil' },
     { ingredientName: 'soy sauce' },
     { ingredientName: 'black pepper' },
-    { ingredientName: 'salt' },
     { ingredientName: 'teriyaki sauce' }
   ]
   await Ingredient.insertMany(ingredients)
