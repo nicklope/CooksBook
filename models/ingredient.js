@@ -7,4 +7,4 @@ const Ingredient = new Schema(
   { timestamps: true }
 )
 
-module.exports = Ingredient
+module.exports = mongoose.model('Ingredient', Ingredient)

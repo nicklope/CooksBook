@@ -6,9 +6,10 @@ const Recipe = new Schema(
     recipeImage: { type: String, required: true },
     recipeOverview: { type: String, required: true },
     recipeInstructions: { type: String, required: true },
-    recipeIngredients: { type: Schema.Types.ObjectId, ref: 'ingredient_id' }
+    tags: { type: Array, required: true },
+    recipeIngredients: [{ type: Schema.Types.ObjectId, ref: 'ingredient_id' }]
   },
   { timestamps: true }
 )
 
-module.exports = Recipe
+module.exports = mongoose.model('Recipe', Recipe)
