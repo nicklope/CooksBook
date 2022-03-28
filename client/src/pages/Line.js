@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import NavBar from '../components/NavBar'
 import Ticket from '../components/Ticket'
 import LineHeader from '../components/LineHeader'
+import Landing from '../components/Landing'
 
 const Line = () => {
   return (
@@ -12,6 +13,7 @@ const Line = () => {
       <header>
         <NavBar />
       </header>
+      <Landing />
       <div id="timeline">
         <LineHeader />
         <div id="ticket-line"></div>
