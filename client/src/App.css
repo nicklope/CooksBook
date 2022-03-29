@@ -174,29 +174,33 @@
 #fullticket-info-container {
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 90%;
 }
 #fullticket-ingredient-container {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 20%;
+  margin: 5px;
 }
 #fullticket-instruction-container {
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
+  width: 60%;
+  margin: 5px;
 }
 #fullticket-instructions {
-  width: 70%;
+  width: 100%;
   border: 2px solid black;
   padding: 10px;
 }
 #fullticket-tag-flexcontainer {
-  width: 30%;
+  width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 5px;
 }
 #fullticket-tag-container {
   display: flex;
@@ -228,4 +232,23 @@
 #input-section {
   display: flex;
   flex-direction: column;
+}
+#delete-button-container {
+  display: flex;
+  justify-content: center;
+}
+#delete-button {
+  border: 2px solid black;
+  background-color: white;
+  cursor: pointer;
+  width: 50%;
+  font-size: large;
+  margin: 10px;
+}
+#delete-button:hover {
+  cursor: pointer;
+  transform: translateY(5px);
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border-color: white;
 }

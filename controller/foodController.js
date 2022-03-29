@@ -39,10 +39,23 @@ const createRecipeTicket = async (req, res) => {
     return res.status(500).json({ error: error.message })
   }
 }
+const deleteRecipe = async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleted = await Recipe.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Recipe deleted')
+    }
+    throw new Error('Recipe not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
 
 module.exports = {
   getRecipe,
   getRecipeById,
   getTags,
-  createRecipeTicket
+  createRecipeTicket,
+  deleteRecipe
 }

@@ -60,6 +60,9 @@ const FullTicket = () => {
           </div>
         </div>
       </div>
+      <div id="delete-button-container">
+        <button id="delete-button">Delete Recipe</button>
+      </div>
     </div>
   )
 }
