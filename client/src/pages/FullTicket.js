@@ -10,6 +10,7 @@ const FullTicket = () => {
   const getTicketById = async () => {
     const response = await axios.get(`http://localhost:3001/recipe/${ticketId}`)
     console.log(response)
+    setSelectedTicket(response.data.recipe)
   }
   useEffect(() => {
     getTicketById()
@@ -20,6 +21,9 @@ const FullTicket = () => {
       <header>
         <NavBar />
       </header>
+      <div id="full-ticket-container">
+        <img src={selectedTicket.recipeImage} />
+      </div>
     </div>
   )
 }
