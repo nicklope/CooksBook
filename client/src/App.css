@@ -42,20 +42,47 @@
 }
 #landing {
   display: flex;
-  height: 500px;
+  height: 425px;
   justify-content: space-around;
   margin-top: 70px;
 }
 #homecook-landing-image {
-  height: 80%;
+  height: 90%;
 }
 #logo-landing-image {
-  height: 80%;
+  height: 90%;
 }
 #restaurant-landing-image {
-  height: 80%;
+  height: 90%;
 }
 #landing-title {
   text-align: center;
   font-size: 55px;
+}
+#lineheader {
+  display: flex;
+  height: 70px;
+  margin: 100px 30px 30px 30px;
+  justify-content: space-between;
+}
+#lineheader-title {
+  width: 70%;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  font-weight: bold;
+}
+#newpost-button {
+  width: 28%;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+#newpost-button:hover {
+  cursor: pointer;
 }
