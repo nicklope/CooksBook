@@ -35,21 +35,29 @@ const FullTicket = () => {
         <h1 id="fullticket-title">{selectedTicket.recipeName}</h1>
         <h2 id="fullticket-overview">{selectedTicket.recipeOverview}</h2>
         <hr />
-        <h1>Ingredients</h1>
-        <ul>
-          {selectedIngredients.map((ingredient) => (
-            <li>{ingredient.ingredientName}</li>
-          ))}
-        </ul>
-        <h1>Instructions</h1>
-        <h3 id="fullticket-instructions">
-          {selectedTicket.recipeInstructions}
-        </h3>
-        <h1>Tags</h1>
-        <div id="fullticket-tag-container">
-          {selectedTags.map((tag) => (
-            <p id="fullticket-tags">{tag.tagName}</p>
-          ))}
+        <div id="fullticket-info-container">
+          <div id="fullticket-ingredient-container">
+            <h1>Ingredients</h1>
+            <ul>
+              {selectedIngredients.map((ingredient) => (
+                <li>{ingredient.ingredientName}</li>
+              ))}
+            </ul>
+          </div>
+          <div id="fullticket-instruction-container">
+            <h1>Instructions</h1>
+            <h3 id="fullticket-instructions">
+              {selectedTicket.recipeInstructions}
+            </h3>
+          </div>
+          <div id="fullticket-tag-flexcontainer">
+            <h1>Tags</h1>
+            <div id="fullticket-tag-container">
+              {selectedTags.map((tag) => (
+                <p id="fullticket-tags">{tag.tagName}</p>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
