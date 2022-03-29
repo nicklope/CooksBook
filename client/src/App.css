@@ -46,6 +46,10 @@
   justify-content: space-around;
   margin-top: 70px;
 }
+#logo-landing-image:hover {
+  cursor: pointer;
+  transform: translateY(-10px);
+}
 #homecook-landing-image {
   height: 90%;
 }
