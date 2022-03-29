@@ -21,8 +21,15 @@ const FullTicket = () => {
       <header>
         <NavBar />
       </header>
-      <div id="full-ticket-container">
-        <img src={selectedTicket.recipeImage} />
+      <div id="fullticket-container">
+        <img id="fullticket-image" src={selectedTicket.recipeImage} />
+        <h1 id="fullticket-title">{selectedTicket.recipeName}</h1>
+        <h2 id="fullticket-overview">{selectedTicket.recipeOverview}</h2>
+        <hr />
+        <h2>Instructions</h2>
+        <h3 id="fullticket-instructions">
+          {selectedTicket.recipeInstructions}
+        </h3>
       </div>
     </div>
   )
