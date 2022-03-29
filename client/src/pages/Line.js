@@ -22,6 +22,9 @@ const Line = () => {
   const showTicket = (ticket) => {
     navigate(`/ticket/${ticket}`)
   }
+  const navNewTicket = () => {
+    navigate(`/newticket`)
+  }
   return (
     <div>
       <header>
@@ -29,7 +32,11 @@ const Line = () => {
       </header>
       <Landing />
       <div id="timeline">
-        <LineHeader />
+        <LineHeader
+          onClick={() => {
+            navNewTicket()
+          }}
+        />
         <div id="ticket-line">
           {recipes.map((recipe) => (
             <Ticket
