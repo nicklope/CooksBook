@@ -14,6 +14,7 @@ app.use(logger('dev'))
 app.use(express.urlencoded({ extended: false }))
 
 app.get('/recipes', foodController.getRecipe)
+app.get('/recipe/:id', foodController.getRecipeById)
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 

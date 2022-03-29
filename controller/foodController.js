@@ -12,7 +12,17 @@ const getRecipe = async (req, res) => {
     return res.status(500).send(error.message)
   }
 }
+const getRecipeById = async (req, res) => {
+  try {
+    const { id } = req.params
+    const recipe = await Recipe.findById(id)
+    return res.status(200).json({ recipe })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
 
 module.exports = {
-  getRecipe
+  getRecipe,
+  getRecipeById
 }

@@ -9,7 +9,7 @@ const Ticket = (props) => {
       <div id="ticket-middle">
         <h1 id="ticket-name">{props.ticketName}</h1>
         <h3 id="ticket-overview">{props.ticketOverview}</h3>
-        <button id="view-ticket-button">View Full Ticket</button>
+        <button id="view-ticket-button" onClick={props.onClick}>View Full Ticket</button>
       </div>
       <div id="ticket-end">
         <img id='fire-button' src={fire}/>
