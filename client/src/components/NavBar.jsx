@@ -9,15 +9,15 @@ const NavBar = () => {
     </div>
     
     <div  id="search-form">
-    <h1 id='search-title'>search:</h1>
-    <form>
-      <div id='search-input'>
-      <label>
-        <input type="text" name="search" id="search-bar"/>
-      </label>
-      <input type="submit" value="go" id="submit-button"/>
-      </div>
-    </form>
+      <h1 id='search-title'>search:</h1>
+      <form>
+        <div id='search-input'>
+          <label>
+            <input type="text" name="search" id="search-bar"/>
+          </label>
+          <input type="submit" value="go" id="submit-button"/>
+        </div>
+      </form>
     </div>
   </div>
   )

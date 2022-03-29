@@ -8,6 +8,15 @@ import LineHeader from '../components/LineHeader'
 import Landing from '../components/Landing'
 
 const Line = () => {
+  const [recipes, setRecipes] = useState([])
+  const grabRecipes = async () => {
+    const response = await axios.get('http://localhost:3001/recipes')
+    console.log(response)
+    setRecipes(response.data.recipe)
+  }
+  useEffect(() => {
+    grabRecipes()
+  }, [])
   return (
     <div>
       <header>
@@ -16,7 +25,9 @@ const Line = () => {
       <Landing />
       <div id="timeline">
         <LineHeader />
-        <div id="ticket-line"></div>
+        <div id="ticket-line">
+          <Ticket />
+        </div>
       </div>
     </div>
   )

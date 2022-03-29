@@ -13,7 +13,7 @@ app.use(cors())
 app.use(logger('dev'))
 app.use(express.urlencoded({ extended: false }))
 
-app.get('/', foodController.getRecipe)
+app.get('/recipes', foodController.getRecipe)
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
