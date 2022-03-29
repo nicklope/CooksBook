@@ -1,3 +1,5 @@
+import fire from '../images/firelogo.png'
+
 const Ticket = (props) => {
   return (
     <div id="ticket">
@@ -10,15 +12,7 @@ const Ticket = (props) => {
         <button id="view-ticket-button">View Full Ticket</button>
       </div>
       <div id="ticket-end">
-        <h1 id="ticket-ingredients-title">Ingredients</h1>
-        <ul id="ticket-ingredient-list">
-          <li>ingredient</li>
-          <li>ingredient</li>
-          <li>ingredient</li>
-        </ul>
-        <p className="tag">Tag 1</p>
-        <p className="tag">Tag 2</p>
-        <p className="tag">Tag 3</p>
+        <img id='fire-button' src={fire}/>
       </div>
     </div>
   )

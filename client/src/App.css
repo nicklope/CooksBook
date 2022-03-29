@@ -127,11 +127,18 @@
   font-size: large;
 }
 #ticket-end {
+  display: flex;
   height: 80%;
   align-self: center;
   margin: 10px;
+  justify-content: center;
+  align-items: center;
 }
-.tag {
-  display: inline;
-  margin: 5px;
+#fire-button {
+  height: 70%;
+  padding: 3px;
+}
+#fire-button:hover {
+  cursor: pointer;
+  transform: translateY(10px);
 }
