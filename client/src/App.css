@@ -170,3 +170,10 @@
   border: 2px solid black;
   padding: 10px;
 }
+#fullticket-tag-container {
+  display: flex;
+  flex-direction: row;
+}
+#fullticket-tags {
+  margin: 5px;
+}

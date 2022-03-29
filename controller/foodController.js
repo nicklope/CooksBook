@@ -15,7 +15,16 @@ const getRecipe = async (req, res) => {
 const getRecipeById = async (req, res) => {
   try {
     const { id } = req.params
-    const recipe = await Recipe.findById(id)
+    const recipe = await Recipe.findById(id).populate('recipeIngredients')
+    return res.status(200).json({ recipe })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+const getTags = async (req, res) => {
+  try {
+    const { id } = req.params
+    const recipe = await Recipe.findById(id).populate('tags')
     return res.status(200).json({ recipe })
   } catch (error) {
     return res.status(500).send(error.message)
@@ -24,5 +33,6 @@ const getRecipeById = async (req, res) => {
 
 module.exports = {
   getRecipe,
-  getRecipeById
+  getRecipeById,
+  getTags
 }
