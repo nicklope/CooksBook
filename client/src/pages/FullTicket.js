@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import NavBar from '../components/NavBar'
 const FullTicket = () => {
   let { ticketId } = useParams()
@@ -20,10 +20,24 @@ const FullTicket = () => {
     console.log(response.data.recipe.tags)
     setSelectedTags(response.data.recipe.tags)
   }
+  const deleteRecipe = async () => {
+    let deleteConfirmation = window.confirm(
+      'Are you sure you want to delete this recipe?'
+    )
+    if (deleteConfirmation) {
+      await axios.delete(`http://localhost:3001/recipe/${ticketId}`)
+      navLine()
+    }
+  }
   useEffect(() => {
     getTicketById()
     getTagsById()
   }, [])
+
+  let navigate = useNavigate()
+  const navLine = () => {
+    navigate('/')
+  }
 
   return (
     <div>
@@ -60,8 +74,11 @@ const FullTicket = () => {
           </div>
         </div>
       </div>
+
       <div id="delete-button-container">
-        <button id="delete-button">Delete Recipe</button>
+        <button onClick={() => deleteRecipe()} id="delete-button">
+          Delete Recipe
+        </button>
       </div>
     </div>
   )
