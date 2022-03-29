@@ -30,9 +30,19 @@ const getTags = async (req, res) => {
     return res.status(500).send(error.message)
   }
 }
+const createRecipeTicket = async (req, res) => {
+  try {
+    const recipe = await new Recipe(req.body)
+    await recipe.save()
+    return 'test'
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
 
 module.exports = {
   getRecipe,
   getRecipeById,
-  getTags
+  getTags,
+  createRecipeTicket
 }

@@ -206,3 +206,26 @@
 #fullticket-tags {
   margin: 5px;
 }
+#newticket-image-container {
+  display: flex;
+  height: 425px;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 70px;
+}
+#newticket-image {
+  height: 80%;
+}
+#newticket-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#newticket-title {
+  font-size: 55px;
+}
+#input-section {
+  display: flex;
+  flex-direction: column;
+}

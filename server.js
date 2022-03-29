@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: false }))
 app.get('/recipes', foodController.getRecipe)
 app.get('/recipe/:id', foodController.getRecipeById)
 app.get('/tags/:id', foodController.getTags)
+app.post('/createrecipe', foodController.createRecipeTicket)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
