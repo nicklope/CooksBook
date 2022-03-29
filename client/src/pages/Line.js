@@ -26,7 +26,14 @@ const Line = () => {
       <div id="timeline">
         <LineHeader />
         <div id="ticket-line">
-          <Ticket />
+          {recipes.map((recipe) => (
+            <Ticket
+              ticketImage={recipe.recipeImage}
+              ticketName={recipe.recipeName}
+              ticketOverview={recipe.recipeOverview}
+              key={recipe._id}
+            />
+          ))}
         </div>
       </div>
     </div>

@@ -1,12 +1,12 @@
-const Ticket = () => {
+const Ticket = (props) => {
   return (
     <div id="ticket">
       <div id="ticket-start">
-        <img id="ticket-image" src="https://i.imgur.com/m8TyWye.jpg"/>
+        <img id="ticket-image" src={props.ticketImage}/>
       </div>
       <div id="ticket-middle">
-        <h1 id="ticket-name">Japanese Salmon Cubes</h1>
-        <h3 id="ticket-overview"> HJKDSHfjkahbsdfgjkbasdjkhfasjkd jkasdhf jklasdf jklasdhfjasdfasdfasdfasdfasdfasdf sadfasfklnasdfjklnaskjbnkjasdbcvjkasbdjk bv</h3>
+        <h1 id="ticket-name">{props.ticketName}</h1>
+        <h3 id="ticket-overview">{props.ticketOverview}</h3>
         <button id="view-ticket-button">View Full Ticket</button>
       </div>
       <div id="ticket-end">
