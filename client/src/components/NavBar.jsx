@@ -1,10 +1,20 @@
 import logo from '../images/481490.png'
+import { useNavigate } from 'react-router-dom'
 const NavBar = () => {
+  const navigate = useNavigate()
+  const navLine = () => {
+    navigate('/')
+  }
   return (
   <div id="navbar">
     <div id="logo">
     <h1>cooksbook</h1>
-    <img id="navicon" src ={logo} alt ="logo"/>
+    <img 
+      id="navicon" 
+      src ={logo} 
+      alt ="logo"
+      onClick={()=>navLine()}
+      />
     
     </div>
     

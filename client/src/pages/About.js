@@ -1,4 +1,11 @@
+import NavBar from '../components/NavBar'
 const About = () => {
-  return <div></div>
+  return (
+    <div>
+      <header>
+        <NavBar />
+      </header>
+    </div>
+  )
 }
 export default About

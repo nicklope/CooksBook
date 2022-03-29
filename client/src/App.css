@@ -15,6 +15,10 @@
   height: 95%;
   width: auto;
 }
+#navicon:hover {
+  cursor: pointer;
+  transform: translateY(5px);
+}
 #logo {
   display: flex;
   flex-direction: row;
