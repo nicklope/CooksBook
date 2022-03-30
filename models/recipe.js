@@ -8,7 +8,8 @@ const Recipe = new Schema(
     recipeOverview: { type: String, required: true },
     recipeInstructions: { type: String, required: true },
     tags: [{ type: Schema.Types.ObjectId, ref: 'Tag' }],
-    recipeIngredients: { type: Array }
+    recipeIngredients: { type: Array },
+    fire: { type: Boolean, required: true }
   },
   { timestamps: true }
 )

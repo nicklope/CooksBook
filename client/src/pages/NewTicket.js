@@ -11,7 +11,8 @@ const NewTicket = () => {
     recipeOverview: '',
     recipeIngredients: [],
     recipeInstructions: '',
-    recipeImage: ''
+    recipeImage: '',
+    fire: false
   })
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -34,11 +35,8 @@ const NewTicket = () => {
   }
 
   const createRecipe = async () => {
-    let createConfirmation = window.confirm('Finalize and create recipe?')
-    if (createConfirmation) {
-      axios.post('http://localhost:3001/createrecipe', formValue)
-      navigate('/')
-    }
+    axios.post('http://localhost:3001/createrecipe', formValue)
+    navigate('/')
   }
 
   const {

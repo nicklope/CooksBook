@@ -24,7 +24,8 @@ const main = async () => {
         '3/4 cup soy sauce',
         'Teaspoon black pepper',
         '1/4 cup teriyaki sauce'
-      ]
+      ],
+      fire: false
     }
   ]
 
