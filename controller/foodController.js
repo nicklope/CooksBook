@@ -51,6 +51,38 @@ const updateRecipeTicket = async (req, res) => {
     return res.status(500).json({ error: error.message })
   }
 }
+const toggleFireTicketTrue = async (req, res) => {
+  try {
+    const { id } = req.params
+    const recipe = await Recipe.updateOne(
+      { _id: id },
+      {
+        $set: {
+          fire: true
+        }
+      }
+    )
+    return res.status(200).json({ recipe })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+const toggleFireTicketFalse = async (req, res) => {
+  try {
+    const { id } = req.params
+    const recipe = await Recipe.updateOne(
+      { _id: id },
+      {
+        $set: {
+          fire: false
+        }
+      }
+    )
+    return res.status(200).json({ recipe })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
 const deleteRecipe = async (req, res) => {
   try {
     const { id } = req.params
@@ -69,5 +101,7 @@ module.exports = {
   getRecipeById,
   createRecipeTicket,
   deleteRecipe,
-  updateRecipeTicket
+  updateRecipeTicket,
+  toggleFireTicketTrue,
+  toggleFireTicketFalse
 }
