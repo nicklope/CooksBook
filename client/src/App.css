@@ -256,3 +256,10 @@
   color: white;
   border-color: white;
 }
+.form {
+  margin: 5px;
+  width: 500px;
+}
+#new-ticket-submit {
+  margin: 10px;
+}
