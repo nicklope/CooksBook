@@ -14,16 +14,16 @@ const main = async () => {
     Place marinated salmon chunks on lightly greased sheet and cook for 12-15 minutes depending on thickness.
     Serve with steamed rice and seaweed sheets`,
       tags: [
-        '6242028f08747d1781bf39b0',
-        '6242028f08747d1781bf39b1',
-        '6242028f08747d1781bf39b2'
+        '6243a761bd4c13e1f495d7e7',
+        '6243a761bd4c13e1f495d7e8',
+        '6243a761bd4c13e1f495d7e9'
       ],
       recipeIngredients: [
-        '624202829992117e9ec9e9ff',
-        '624202829992117e9ec9ea00',
-        '624202829992117e9ec9ea01',
-        '624202829992117e9ec9ea02',
-        '624202829992117e9ec9ea03'
+        '2 salmon filets, skinless (1-1.5lb)',
+        '1/2 cup sesame oil',
+        '3/4 cup soy sauce',
+        'Teaspoon black pepper',
+        '1/4 cup teriyaki sauce'
       ]
     }
   ]

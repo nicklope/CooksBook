@@ -2,6 +2,7 @@ import axios from 'axios'
 import NavBar from '../components/NavBar'
 import homeCook from '../images/2729063.png'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const NewTicket = () => {
   const [formValue, setFormValue] = useState({
@@ -19,6 +20,14 @@ const NewTicket = () => {
       }
     }
     setFormValue(newValues)
+  }
+  const navigate = useNavigate()
+  const navLine = () => {
+    navigate('/')
+  }
+  const createRecipe = async () => {
+    await axios.post('http://localhost:3001/createrecipe', formValue)
+    navLine()
   }
   const { recipeName, recipeOverview, recipeInstructions, recipeImage } =
     formValue
@@ -65,13 +74,7 @@ const NewTicket = () => {
             value={recipeInstructions}
             onChange={handleChange}
           />
-          <button
-            onClick={async () =>
-              await axios.post('http://localhost:3001/createrecipe', formValue)
-            }
-          >
-            Submit
-          </button>
+          <button onClick={() => createRecipe()}>Submit</button>
         </section>
       </div>
     </div>

@@ -11,15 +11,11 @@ const FullTicket = () => {
 
   const getTicketById = async () => {
     const response = await axios.get(`http://localhost:3001/recipe/${ticketId}`)
-    console.log(response.data.recipe)
     setSelectedTicket(response.data.recipe)
     setSelectedIngredients(response.data.recipe.recipeIngredients)
-  }
-  const getTagsById = async () => {
-    const response = await axios.get(`http://localhost:3001/tags/${ticketId}`)
-    console.log(response.data.recipe.tags)
     setSelectedTags(response.data.recipe.tags)
   }
+
   const deleteRecipe = async () => {
     let deleteConfirmation = window.confirm(
       'Are you sure you want to delete this recipe?'
@@ -31,7 +27,6 @@ const FullTicket = () => {
   }
   useEffect(() => {
     getTicketById()
-    getTagsById()
   }, [])
 
   let navigate = useNavigate()
@@ -54,7 +49,7 @@ const FullTicket = () => {
             <h1>Ingredients</h1>
             <ul>
               {selectedIngredients.map((ingredient) => (
-                <li>{ingredient.ingredientName}</li>
+                <li>{ingredient}</li>
               ))}
             </ul>
           </div>
@@ -67,9 +62,11 @@ const FullTicket = () => {
           <div id="fullticket-tag-flexcontainer">
             <h1>Tags</h1>
             <div id="fullticket-tag-container">
-              {selectedTags.map((tag) => (
-                <p id="fullticket-tags">{tag.tagName}</p>
-              ))}
+              <ul id="fullticket-tag-list">
+                {selectedTags.map((tag) => (
+                  <li>{tag.tagName}</li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
