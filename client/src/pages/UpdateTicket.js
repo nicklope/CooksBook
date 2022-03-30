@@ -7,6 +7,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 const UpdateTicket = () => {
   const navigate = useNavigate()
   let { ticketId } = useParams()
+
   const [formValue, setFormValue] = useState({
     recipeName: '',
     recipeOverview: '',
@@ -14,15 +15,11 @@ const UpdateTicket = () => {
     recipeInstructions: '',
     recipeImage: ''
   })
-  const [selectedTicket, setSelectedTicket] = useState([])
-  const [selectedIngredients, setSelectedIngredients] = useState([])
-  const [selectedTags, setSelectedTags] = useState([])
 
   const getTicketById = async () => {
     const response = await axios.get(`http://localhost:3001/recipe/${ticketId}`)
-    setSelectedTicket(response.data.recipe)
-    setSelectedIngredients(response.data.recipe.recipeIngredients)
-    setSelectedTags(response.data.recipe.tags)
+    console.log(response.data.recipe)
+    setFormValue(response.data.recipe)
   }
   useEffect(() => {
     getTicketById()
@@ -48,12 +45,9 @@ const UpdateTicket = () => {
     setFormValue(newValues)
   }
 
-  const createRecipe = async () => {
-    let createConfirmation = window.confirm('Finalize and create recipe?')
-    if (createConfirmation) {
-      axios.post('http://localhost:3001/createrecipe', formValue)
-      navigate('/')
-    }
+  const updateRecipe = async () => {
+    axios.put(`http://localhost:3001/updaterecipe/${ticketId}`, formValue)
+    navigate(`/ticket/${ticketId}`)
   }
 
   const {
@@ -126,7 +120,7 @@ const UpdateTicket = () => {
             onChange={handleChange}
           />
           <div id="new-button-box">
-            <button id="new-ticket-submit" onClick={() => createRecipe()}>
+            <button id="new-ticket-submit" onClick={() => updateRecipe()}>
               Submit
             </button>
           </div>

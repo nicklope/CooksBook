@@ -25,9 +25,28 @@ const getRecipeById = async (req, res) => {
 const createRecipeTicket = async (req, res) => {
   try {
     const recipe = await new Recipe(req.body)
-    // recipe.recipeIngredients.push()
     await recipe.save()
     return 'test'
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+const updateRecipeTicket = async (req, res) => {
+  try {
+    const { id } = req.params
+    const recipe = await Recipe.updateOne(
+      { _id: id },
+      {
+        $set: {
+          recipeName: req.body.recipeName,
+          recipeImage: req.body.recipeImage,
+          recipeOverview: req.body.recipeOverview,
+          recipeIngredients: req.body.recipeIngredients,
+          recipeInstructions: req.body.recipeInstructions
+        }
+      }
+    )
+    return res.status(200).json({ recipe })
   } catch (error) {
     return res.status(500).json({ error: error.message })
   }
@@ -49,5 +68,6 @@ module.exports = {
   getRecipe,
   getRecipeById,
   createRecipeTicket,
-  deleteRecipe
+  deleteRecipe,
+  updateRecipeTicket
 }

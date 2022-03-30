@@ -17,6 +17,7 @@ app.get('/recipes', foodController.getRecipe)
 app.get('/recipe/:id', foodController.getRecipeById)
 app.delete('/recipe/:id', foodController.deleteRecipe)
 app.post('/createrecipe', foodController.createRecipeTicket)
+app.put('/updaterecipe/:id', foodController.updateRecipeTicket)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
