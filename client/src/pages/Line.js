@@ -38,17 +38,20 @@ const Line = () => {
           }}
         />
         <div id="ticket-line">
-          {recipes.map((recipe) => (
-            <Ticket
-              ticketImage={recipe.recipeImage}
-              ticketName={recipe.recipeName}
-              ticketOverview={recipe.recipeOverview}
-              onClick={() => {
-                showTicket(recipe._id)
-              }}
-              key={recipe._id}
-            />
-          ))}
+          {recipes
+            .slice(0)
+            .reverse()
+            .map((recipe) => (
+              <Ticket
+                ticketImage={recipe.recipeImage}
+                ticketName={recipe.recipeName}
+                ticketOverview={recipe.recipeOverview}
+                onClick={() => {
+                  showTicket(recipe._id)
+                }}
+                key={recipe._id}
+              />
+            ))}
         </div>
       </div>
     </div>

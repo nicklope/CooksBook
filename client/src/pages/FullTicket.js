@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import NavBar from '../components/NavBar'
 const FullTicket = () => {
+  let navigate = useNavigate()
   let { ticketId } = useParams()
 
   const [selectedTicket, setSelectedTicket] = useState([])
@@ -16,23 +17,9 @@ const FullTicket = () => {
     setSelectedTags(response.data.recipe.tags)
   }
 
-  const deleteRecipe = async () => {
-    let deleteConfirmation = window.confirm(
-      'Are you sure you want to delete this recipe?'
-    )
-    if (deleteConfirmation) {
-      await axios.delete(`http://localhost:3001/recipe/${ticketId}`)
-      navLine()
-    }
-  }
   useEffect(() => {
     getTicketById()
   }, [])
-
-  let navigate = useNavigate()
-  const navLine = () => {
-    navigate('/')
-  }
 
   return (
     <div>
@@ -71,10 +58,18 @@ const FullTicket = () => {
           </div>
         </div>
       </div>
-
+      <div
+        id="update-button-container"
+        onClick={() => navigate(`/updateticket/${ticketId}`)}
+      >
+        <button id="update-button">Update Ticket</button>
+      </div>
       <div id="delete-button-container">
-        <button onClick={() => deleteRecipe()} id="delete-button">
-          Delete Recipe
+        <button
+          onClick={() => navigate(`/confirm/${ticketId}`)}
+          id="delete-button"
+        >
+          Delete Ticket
         </button>
       </div>
     </div>

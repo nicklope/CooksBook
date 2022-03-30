@@ -179,7 +179,7 @@
 #fullticket-ingredient-container {
   display: flex;
   flex-direction: column;
-  width: 20%;
+  width: 30%;
   margin: 15px;
 }
 #fullticket-instruction-container {
@@ -187,7 +187,7 @@
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  width: 60%;
+  width: 40%;
   margin-left: 15px;
   margin-right: 15px;
 }
@@ -197,7 +197,7 @@
   padding: 10px;
 }
 #fullticket-tag-flexcontainer {
-  width: 20%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -234,6 +234,28 @@
   display: flex;
   flex-direction: column;
 }
+#update-button-container {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+#update-button {
+  border: 2px solid black;
+  background-color: white;
+  cursor: pointer;
+  width: 50%;
+  font-size: large;
+  margin: 10px;
+  text-decoration: none;
+}
+#update-button:hover {
+  cursor: pointer;
+  transform: translateY(5px);
+  background-color: black;
+  color: white;
+  border-color: white;
+}
 #delete-button-container {
   display: flex;
   justify-content: center;
@@ -260,6 +282,79 @@
   margin: 5px;
   width: 500px;
 }
+#new-button-box {
+  display: flex;
+  justify-content: center;
+}
+#recipe-ingredient-input {
+  height: 100px;
+}
+#recipe-instructions-input {
+  height: 150px;
+}
 #new-ticket-submit {
   margin: 10px;
+  border: 2px solid black;
+  background-color: white;
+  cursor: pointer;
+  width: 50%;
+  font-size: large;
+  margin: 10px;
+  text-decoration: none;
+}
+#new-ticket-submit:hover {
+  cursor: pointer;
+  transform: translateY(5px);
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+#trashcan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  align-items: center;
+  border: 3px solid black;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+#confirm-button-container {
+  display: flex;
+  width: 60%;
+}
+#confirm-delete-button {
+  margin: 10px;
+  border: 2px solid black;
+  background-color: white;
+  cursor: pointer;
+  width: 50%;
+  font-size: large;
+  margin: 10px;
+  text-decoration: none;
+}
+#confirm-delete-button:hover {
+  cursor: pointer;
+  transform: translateY(5px);
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border-color: white;
+}
+#confirm-goback-button {
+  margin: 10px;
+  border: 2px solid black;
+  background-color: white;
+  cursor: pointer;
+  width: 50%;
+  font-size: large;
+  margin: 10px;
+  text-decoration: none;
+}
+#confirm-goback-button:hover {
+  cursor: pointer;
+  transform: translateY(5px);
+  background-color: black;
+  color: white;
+  border-color: white;
 }

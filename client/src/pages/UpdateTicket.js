@@ -1,11 +1,12 @@
 import axios from 'axios'
 import NavBar from '../components/NavBar'
-import homeCook from '../images/2729063.png'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import receipt from '../images/receipt.png'
+import { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 
-const NewTicket = () => {
+const UpdateTicket = () => {
   const navigate = useNavigate()
+  let { ticketId } = useParams()
   const [formValue, setFormValue] = useState({
     recipeName: '',
     recipeOverview: '',
@@ -13,6 +14,20 @@ const NewTicket = () => {
     recipeInstructions: '',
     recipeImage: ''
   })
+  const [selectedTicket, setSelectedTicket] = useState([])
+  const [selectedIngredients, setSelectedIngredients] = useState([])
+  const [selectedTags, setSelectedTags] = useState([])
+
+  const getTicketById = async () => {
+    const response = await axios.get(`http://localhost:3001/recipe/${ticketId}`)
+    setSelectedTicket(response.data.recipe)
+    setSelectedIngredients(response.data.recipe.recipeIngredients)
+    setSelectedTags(response.data.recipe.tags)
+  }
+  useEffect(() => {
+    getTicketById()
+  }, [])
+
   const handleChange = (event) => {
     const { name, value } = event.target
     console.log(name)
@@ -54,10 +69,10 @@ const NewTicket = () => {
         <NavBar />
       </header>
       <div id="newticket-image-container">
-        <img id="newticket-image" src={homeCook} />
+        <img id="newticket-image" src={receipt} />
       </div>
       <div id="newticket-content-container">
-        <h1 id="newticket-title">Post a New Ticket</h1>
+        <h1 id="newticket-title">Update a Ticket</h1>
         <section id="input-section">
           <h2>Name</h2>
           <input
@@ -120,4 +135,4 @@ const NewTicket = () => {
     </div>
   )
 }
-export default NewTicket
+export default UpdateTicket
