@@ -16,6 +16,7 @@ const FullTicket = () => {
     setSelectedTicket(response.data.recipe)
     setSelectedIngredients(response.data.recipe.recipeIngredients)
     setSelectedTags(response.data.recipe.tags)
+    console.log(response.data.recipe)
   }
 
   useEffect(() => {

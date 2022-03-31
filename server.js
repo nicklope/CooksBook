@@ -22,6 +22,7 @@ app.post('/createtags/:id', foodController.createTags)
 app.put('/updaterecipe/:id', foodController.updateRecipeTicket)
 app.put('/togglefiretrue/:id', foodController.toggleFireTicketTrue)
 app.put('/togglefirefalse/:id', foodController.toggleFireTicketFalse)
+app.disable('etag')
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))

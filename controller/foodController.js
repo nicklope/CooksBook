@@ -47,7 +47,7 @@ const createTags = async (req, res) => {
     const tag = await new Tag(req.body)
     console.log(tag)
     recipe.tags.push(tag._id)
-
+    await tag.save()
     await recipe.save()
     return res.json(recipe)
   } catch (error) {
