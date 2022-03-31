@@ -7,6 +7,8 @@ const TagInput = () => {
   const [formValue, setFormValue] = useState({
     tagName: ""
   })
+  const [submitted, setSubmitted] = useState(false)
+  
   const handleChange = (event) => {
     const { name, value } = event.target
     const newValues = (prevState) => {
@@ -22,18 +24,18 @@ const TagInput = () => {
 
   const createTags = async (e) => {
     e.preventDefault()
+    setSubmitted(true)
     axios.post(`http://localhost:3001/createtags/${ticketId}`, formValue)
     
   }
 
-  const {
- tagName
-  } = formValue
+  const {tagName} = formValue
   return(
     
     <div> 
+      {submitted ? ( console.log("submitted")) :(
       <form onSubmit={createTags}>     
-      <input
+        <input
     className="tag-form"
     id="tag-input"
     type="text"
@@ -41,8 +43,9 @@ const TagInput = () => {
     placeholder="tag, you're it!"
     onChange={handleChange}
     />
-     <button id="submittags-button" type="submit">Submit Tags</button>
-     </form>   
+      <button id="submittags-button" type="submit">Submit</button>
+    </form> )    
+}
   </div>
   )
 }
