@@ -39,6 +39,15 @@ const createRecipeTicket = async (req, res) => {
     return res.status(500).json({ error: error.message })
   }
 }
+const createTags = async (req, res) => {
+  try {
+    const recipe = await new Tag(req.body)
+    await recipe.save()
+    return 'test'
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
 const updateRecipeTicket = async (req, res) => {
   try {
     const { id } = req.params
@@ -114,5 +123,6 @@ module.exports = {
   updateRecipeTicket,
   toggleFireTicketTrue,
   toggleFireTicketFalse,
-  getRecipeByFire
+  getRecipeByFire,
+  createTags
 }

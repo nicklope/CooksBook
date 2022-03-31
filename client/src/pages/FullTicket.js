@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import NavBar from '../components/NavBar'
+import noimage from '../images/442344.png'
 const FullTicket = () => {
   let navigate = useNavigate()
   let { ticketId } = useParams()
@@ -27,7 +28,12 @@ const FullTicket = () => {
         <NavBar />
       </header>
       <div id="fullticket-container">
-        <img id="fullticket-image" src={selectedTicket.recipeImage} />
+        <img
+          id="fullticket-image"
+          src={
+            selectedTicket.recipeImage ? selectedTicket.recipeImage : noimage
+          }
+        />
         <h1 id="fullticket-title">{selectedTicket.recipeName}</h1>
         <h2 id="fullticket-overview">{selectedTicket.recipeOverview}</h2>
         <hr />

@@ -5,6 +5,7 @@ import NavBar from '../components/NavBar'
 import Ticket from '../components/Ticket'
 import LineHeader from '../components/LineHeader'
 import Landing from '../components/Landing'
+import firelogored from '../images/firelogored.png'
 
 const FireRail = () => {
   const [recipes, setRecipes] = useState([])
@@ -38,7 +39,7 @@ const FireRail = () => {
   return (
     <div>
       <header>
-        <NavBar />
+        <NavBar firelogored={firelogored} />
       </header>
       <div id="timeline">
         <div id="firerail-header">
