@@ -67,12 +67,12 @@ const Line = () => {
                   )
 
                   if (response.data.recipe.fire == false) {
-                    fireClickTrue(recipe._id)
+                    await fireClickTrue(recipe._id)
                     fire++
                     setFireChecker(fire)
                     console.log(fireChecker)
                   } else {
-                    fireClickFalse(recipe._id)
+                    await fireClickFalse(recipe._id)
                     fire++
                     setFireChecker(fire)
                     console.log(fireChecker)

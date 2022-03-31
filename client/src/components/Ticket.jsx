@@ -1,6 +1,8 @@
 
 
+
 const Ticket = (props) => {
+
   return (
     <div id="ticket">
       <div id="ticket-start">
