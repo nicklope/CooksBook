@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar'
 import receipt from '../images/receipt.png'
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import firelogoblack from '../images/firelogo.png'
 
 const UpdateTicket = () => {
   const navigate = useNavigate()
@@ -13,7 +14,9 @@ const UpdateTicket = () => {
     recipeOverview: '',
     recipeIngredients: [],
     recipeInstructions: '',
-    recipeImage: ''
+    recipeImage: '',
+    fire: true,
+    fireLogo: firelogoblack
   })
 
   const getTicketById = async () => {

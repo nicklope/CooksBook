@@ -25,7 +25,8 @@ const main = async () => {
         'Teaspoon black pepper',
         '1/4 cup teriyaki sauce'
       ],
-      fire: false
+      fire: false,
+      fireLogo: 'https://i.imgur.com/gzvsg4U.png'
     }
   ]
 

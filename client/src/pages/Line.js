@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom'
 
 const Line = () => {
   const [recipes, setRecipes] = useState([])
+  const [fireChecker, setFireChecker] = useState(0)
+
   const grabRecipes = async () => {
     const response = await axios.get('http://localhost:3001/recipes')
     console.log(response.data.recipe)
@@ -15,7 +17,8 @@ const Line = () => {
   }
   useEffect(() => {
     grabRecipes()
-  }, [])
+    console.log('change')
+  }, [fireChecker])
 
   let navigate = useNavigate()
 
@@ -31,7 +34,7 @@ const Line = () => {
   const fireClickFalse = (ticketId) => {
     axios.put(`http://localhost:3001/togglefirefalse/${ticketId}`)
   }
-  let color = 'black'
+  let fire = 0
   return (
     <div>
       <header>
@@ -63,10 +66,17 @@ const Line = () => {
 
                   if (response.data.recipe.fire == false) {
                     fireClickTrue(recipe._id)
+                    fire++
+                    setFireChecker(fire)
+                    console.log(fireChecker)
                   } else {
                     fireClickFalse(recipe._id)
+                    fire++
+                    setFireChecker(fire)
+                    console.log(fireChecker)
                   }
                 }}
+                src={recipe.fireLogo}
                 key={recipe._id}
               />
             ))}

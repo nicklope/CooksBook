@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar'
 import homeCook from '../images/2729063.png'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import firelogoblack from '../images/firelogo.png'
 
 const NewTicket = () => {
   const navigate = useNavigate()
@@ -12,7 +13,8 @@ const NewTicket = () => {
     recipeIngredients: [],
     recipeInstructions: '',
     recipeImage: '',
-    fire: false
+    fire: false,
+    fireLogo: firelogoblack
   })
   const handleChange = (event) => {
     const { name, value } = event.target

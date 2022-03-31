@@ -58,7 +58,8 @@ const toggleFireTicketTrue = async (req, res) => {
       { _id: id },
       {
         $set: {
-          fire: true
+          fire: true,
+          fireLogo: 'https://i.imgur.com/yZ986Hb.png'
         }
       }
     )
@@ -74,7 +75,8 @@ const toggleFireTicketFalse = async (req, res) => {
       { _id: id },
       {
         $set: {
-          fire: false
+          fire: false,
+          fireLogo: 'https://i.imgur.com/gzvsg4U.png'
         }
       }
     )
