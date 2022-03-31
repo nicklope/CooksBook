@@ -55,6 +55,12 @@ const FullTicket = () => {
                 ))}
               </ul>
             </div>
+            <button
+              id="add-tag-button"
+              onClick={() => navigate(`/addtags/${ticketId}`)}
+            >
+              Tags +
+            </button>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import NewTicket from './pages/NewTicket'
 import ConfirmationPage from './pages/ConfirmationPage'
 import UpdateTicket from './pages/UpdateTicket'
 import FireRail from './pages/FireRail.js'
+import AddTags from './pages/AddTags'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/confirm/:ticketId" element={<ConfirmationPage />} />
         <Route path="/newticket" element={<NewTicket />} />
         <Route path="/updateticket/:ticketId" element={<UpdateTicket />} />
+        <Route path="/addtags/:ticketId" element={<AddTags />} />
       </Routes>
     </div>
   )

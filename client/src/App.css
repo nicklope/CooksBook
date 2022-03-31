@@ -233,6 +233,21 @@
 #fullticket-tag-list {
   list-style: none;
 }
+#add-tag-button {
+  border: 2px solid black;
+  background-color: white;
+  cursor: pointer;
+  width: 30%;
+  font-size: large;
+  font-size: smaller;
+}
+#add-tag-button:hover {
+  cursor: pointer;
+  transform: translateY(5px);
+  background-color: black;
+  color: white;
+  border-color: white;
+}
 #newticket-image-container {
   display: flex;
   height: 425px;
@@ -382,6 +397,65 @@
 }
 #firerail-header {
   margin-top: 125px;
+}
+#addtags-image-container {
+  display: flex;
+  height: 425px;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 125px;
+}
+#addtags-image {
+  height: 90%;
+}
+#addtags-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#add-taginput-button {
+  border: 2px solid black;
+  background-color: white;
+  cursor: pointer;
+  width: 40%;
+  padding: 0px;
+  font-size: 23px;
+  font-weight: bolder;
+  margin: 10px;
+  text-decoration: none;
+}
+#add-taginput-button:hover {
+  cursor: pointer;
+  transform: translateY(5px);
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+#subtract-taginput-button {
+  border: 2px solid black;
+  background-color: white;
+  cursor: pointer;
+  width: 40%;
+  padding: 0px;
+  font-size: 23px;
+  font-weight: bolder;
+  margin: 10px;
+  text-decoration: none;
+}
+#subtract-taginput-button:hover {
+  cursor: pointer;
+  transform: translateY(5px);
+  background-color: red;
+  color: white;
+  border-color: white;
+}
+#add-subtract-container {
+  display: flex;
+  width: 20%;
+}
+#tag-input {
+  margin: 5px;
 }
 
 @keyframes wobble {
