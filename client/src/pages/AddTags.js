@@ -32,9 +32,7 @@ const AddTags = () => {
             -
           </button>
         </div>
-        <div id="submittags-button-container">
-          <button id="submittags-button">Submit Tags</button>
-        </div>
+        <div id="submittags-button-container"></div>
         <div id="goback-button-container">
           <button
             onClick={() => navigate(`/ticket/${ticketId}`)}

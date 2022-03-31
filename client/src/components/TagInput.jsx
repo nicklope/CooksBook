@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 const TagInput = () => {
+  const {ticketId} = useParams()
   const navigate = useNavigate()
   const [formValue, setFormValue] = useState({
     tagName: ""
@@ -19,9 +20,10 @@ const TagInput = () => {
     console.log(formValue)
   }
 
-  const createTags = async () => {
-    axios.post('http://localhost:3001/createrecipe', formValue)
-    navigate('/')
+  const createTags = async (e) => {
+    e.preventDefault()
+    axios.post(`http://localhost:3001/createtags/${ticketId}`, formValue)
+    
   }
 
   const {
@@ -29,7 +31,8 @@ const TagInput = () => {
   } = formValue
   return(
     
-    <div>         
+    <div> 
+      <form onSubmit={createTags}>     
       <input
     className="tag-form"
     id="tag-input"
@@ -38,6 +41,8 @@ const TagInput = () => {
     placeholder="tag, you're it!"
     onChange={handleChange}
     />
+     <button id="submittags-button" type="submit">Submit Tags</button>
+     </form>   
   </div>
   )
 }

@@ -9,7 +9,7 @@ import firelogored from '../images/firelogored.png'
 
 const FireRail = () => {
   const [recipes, setRecipes] = useState([])
-  const [fireChecker, setFireChecker] = useState(0)
+  const [fireChecker, setFireChecker] = useState(false)
 
   const grabRecipes = async () => {
     const response = await axios.get('http://localhost:3001/fire')
@@ -35,7 +35,7 @@ const FireRail = () => {
   const fireClickFalse = (ticketId) => {
     axios.put(`http://localhost:3001/togglefirefalse/${ticketId}`)
   }
-  let fire = 0
+  let fire = true
   return (
     <div>
       <header>
@@ -69,12 +69,12 @@ const FireRail = () => {
 
                   if (response.data.recipe.fire == false) {
                     fireClickTrue(recipe._id)
-                    fire++
+                    fire = !fire
                     setFireChecker(fire)
                     console.log(fireChecker)
                   } else {
                     fireClickFalse(recipe._id)
-                    fire++
+                    fire = !fire
                     setFireChecker(fire)
                     console.log(fireChecker)
                   }

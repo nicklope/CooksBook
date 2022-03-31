@@ -41,9 +41,15 @@ const createRecipeTicket = async (req, res) => {
 }
 const createTags = async (req, res) => {
   try {
-    const recipe = await new Tag(req.body)
+    const { id } = req.params
+    const recipe = await Recipe.findOne({ _id: id })
+    console.log(recipe)
+    const tag = await new Tag(req.body)
+    console.log(tag)
+    recipe.tags.push(tag._id)
+
     await recipe.save()
-    return 'test'
+    return res.json(recipe)
   } catch (error) {
     return res.status(500).json({ error: error.message })
   }
