@@ -1,4 +1,5 @@
 import logo from '../images/481490.png'
+import firelogo from '../images/firelogo.png'
 import { useNavigate } from 'react-router-dom'
 const NavBar = () => {
   const navigate = useNavigate()
@@ -19,6 +20,7 @@ const NavBar = () => {
     </div>
     
     <div  id="search-form">
+      <img id='fireicon' src={firelogo}/>
       <h1 id='search-title'>search:</h1>
       <form>
         <div id='search-input'>
