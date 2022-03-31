@@ -6,6 +6,7 @@ import FullTicket from './pages/FullTicket'
 import NewTicket from './pages/NewTicket'
 import ConfirmationPage from './pages/ConfirmationPage'
 import UpdateTicket from './pages/UpdateTicket'
+import FireRail from './pages/FireRail.js'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Line />} />
         <Route path="/about" element={<About />} />
+        <Route path="/firerail" element={<FireRail />} />
         <Route path="/ticket/:ticketId" element={<FullTicket />} />
         <Route path="/confirm/:ticketId" element={<ConfirmationPage />} />
         <Route path="/newticket" element={<NewTicket />} />

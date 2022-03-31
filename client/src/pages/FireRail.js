@@ -1,18 +1,17 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import NavBar from '../components/NavBar'
 import Ticket from '../components/Ticket'
 import LineHeader from '../components/LineHeader'
 import Landing from '../components/Landing'
-import { useNavigate } from 'react-router-dom'
-import logo from '../images/481490.png'
 
-const Line = () => {
+const FireRail = () => {
   const [recipes, setRecipes] = useState([])
   const [fireChecker, setFireChecker] = useState(0)
 
   const grabRecipes = async () => {
-    const response = await axios.get('http://localhost:3001/recipes')
+    const response = await axios.get('http://localhost:3001/fire')
     console.log(response.data.recipe)
     setRecipes(response.data.recipe)
   }
@@ -41,14 +40,15 @@ const Line = () => {
       <header>
         <NavBar />
       </header>
-      <Landing />
       <div id="timeline">
-        <LineHeader
-          title={'Tickets on the Rail'}
-          onClick={() => {
-            navNewTicket()
-          }}
-        />
+        <div id="firerail-header">
+          <LineHeader
+            title={'Tickets on the Fire Rail'}
+            onClick={() => {
+              navNewTicket()
+            }}
+          />
+        </div>
         <div id="ticket-line">
           {recipes
             .slice(0)
@@ -78,7 +78,6 @@ const Line = () => {
                     console.log(fireChecker)
                   }
                 }}
-                imgKey={recipe._id}
                 src={recipe.fireLogo}
                 key={recipe._id}
               />
@@ -88,4 +87,4 @@ const Line = () => {
     </div>
   )
 }
-export default Line
+export default FireRail

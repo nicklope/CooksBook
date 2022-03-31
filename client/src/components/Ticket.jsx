@@ -12,7 +12,7 @@ const Ticket = (props) => {
         <button id="view-ticket-button" onClick={props.onClick}>View Full Ticket</button>
       </div>
       <div id="ticket-end">
-        <img id='fire-button' onClick={props.fireClick} src={props.src}/>
+        <img id='fire-button' onClick={props.fireClick} src={props.src} key={props.imgKey}/>
       </div>
     </div>
   )

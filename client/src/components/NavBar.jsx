@@ -1,26 +1,27 @@
 import logo from '../images/481490.png'
 import firelogo from '../images/firelogo.png'
 import { useNavigate } from 'react-router-dom'
+
 const NavBar = () => {
   const navigate = useNavigate()
-  const navLine = () => {
-    navigate('/')
-  }
+
+    
+
   return (
   <div id="navbar">
-    <div id="logo">
+    <div id={"logo"}>
     <h1>cooksbook</h1>
     <img 
       id="navicon" 
-      src ={logo} 
+      src ={(logo)} 
       alt ="logo"
-      onClick={()=>navLine()}
+      onClick={()=>navigate('/')}
       />
     
     </div>
     
     <div  id="search-form">
-      <img id='fireicon' src={firelogo}/>
+      <img id='fireicon' src={firelogo} onClick={()=>navigate("/firerail")}/>
       <h1 id='search-title'>search:</h1>
       <form>
         <div id='search-input'>

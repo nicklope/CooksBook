@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: false }))
 
 app.get('/recipes', foodController.getRecipe)
 app.get('/recipe/:id', foodController.getRecipeById)
+app.get('/fire', foodController.getRecipeByFire)
 app.delete('/recipe/:id', foodController.deleteRecipe)
 app.post('/createrecipe', foodController.createRecipeTicket)
 app.put('/updaterecipe/:id', foodController.updateRecipeTicket)

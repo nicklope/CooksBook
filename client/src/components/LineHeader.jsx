@@ -2,7 +2,7 @@ const LineHeader = (props) => {
   return (
   <div id="lineheader">
     <div id="lineheader-title">
-      Tickets on the Rail
+      <h4>{props.title}</h4>
     </div>
     <div 
       onClick={props.onClick}
