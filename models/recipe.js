@@ -4,7 +4,7 @@ const { Schema } = require('mongoose')
 const Recipe = new Schema(
   {
     recipeName: { type: String, required: true },
-    recipeImage: { type: String, required: true },
+    recipeImage: { type: String },
     recipeOverview: { type: String, required: true },
     recipeInstructions: { type: String, required: true },
     tags: [{ type: Schema.Types.ObjectId, ref: 'Tag' }],

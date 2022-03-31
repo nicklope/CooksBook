@@ -1,12 +1,12 @@
 
-
+import noimage from '../images/442344.png'
 
 const Ticket = (props) => {
 
   return (
     <div id="ticket">
       <div id="ticket-start">
-        <img id="ticket-image" src={props.ticketImage}/>
+        <img id="ticket-image" src={props.ticketImage ? props.ticketImage : noimage}/>
       </div>
       <div id="ticket-middle">
         <h1 id="ticket-name">{props.ticketName}</h1>
