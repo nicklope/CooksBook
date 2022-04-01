@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(cors())
 app.use(logger('dev'))
 app.use(express.urlencoded({ extended: false }))
-
+app.use(express.static(`${__dirname}/client/build`))
 app.get('/recipes', foodController.getRecipe)
 app.get('/recipe/:id', foodController.getRecipeById)
 app.get('/fire', foodController.getRecipeByFire)
@@ -25,5 +25,7 @@ app.put('/togglefiretrue/:id', foodController.toggleFireTicketTrue)
 app.put('/togglefirefalse/:id', foodController.toggleFireTicketFalse)
 app.disable('etag')
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
-
+app.get('/*', (req, res) => {
+  res.sendFile(`${__dirname}/client/build/index.html`)
+})
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))

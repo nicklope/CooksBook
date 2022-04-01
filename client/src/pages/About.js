@@ -26,6 +26,8 @@ const About = () => {
           <em>functional is pending</em>). This mission stemmed from the fact
           that everytime I looked for a recipe online, every site I found was a
           bogged down mess of ads, personal stories, and other garbage.
+          <br />
+          <br />
           Cooksbook is clean. It gives users easy access to the recipes their
           looking for. I didn't develop this site with an option to add your
           personal story about your vacation in Italy (
