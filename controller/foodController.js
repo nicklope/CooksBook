@@ -35,8 +35,10 @@ const getRecipeByTag = async (req, res) => {
     const tag = await Tag.find({ tagName: tagname })
     const recipes = await Recipe.find().populate('tags')
     const selectedRecipe = recipes.filter((recipe) => {
-      for (let i = 0; i < recipes.length; i++) {
-        return recipe.tags[i].tagName === tag[0].tagName
+      for (let i = 0; i < recipe.tags.length; i++) {
+        if (recipe.tags[i].tagName === tag[0].tagName) {
+          return recipe.tags[i].tagName === tag[0].tagName
+        }
       }
     })
     console.log(selectedRecipe)
