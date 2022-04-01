@@ -4,7 +4,7 @@ import axios from 'axios'
 import NavBar from '../components/NavBar'
 import Ticket from '../components/Ticket'
 import LineHeader from '../components/LineHeader'
-import Landing from '../components/Landing'
+
 import firelogored from '../images/firelogored.png'
 
 const FireRail = () => {

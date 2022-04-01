@@ -13,11 +13,7 @@ const main = async () => {
     Marinate for at least half an hour, then preheat oven to 450
     Place marinated salmon chunks on lightly greased sheet and cook for 12-15 minutes depending on thickness.
     Serve with steamed rice and seaweed sheets`,
-      tags: [
-        '6243a761bd4c13e1f495d7e7',
-        '6243a761bd4c13e1f495d7e8',
-        '6243a761bd4c13e1f495d7e9'
-      ],
+      tags: [],
       recipeIngredients: [
         '2 salmon filets, skinless (1-1.5lb)',
         '1/2 cup sesame oil',
@@ -34,6 +30,7 @@ const main = async () => {
   console.log('Here come some recipes!')
 }
 const run = async () => {
+  await db.dropDatabase()
   await main()
   db.close()
 }

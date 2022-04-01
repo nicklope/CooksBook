@@ -14,6 +14,7 @@ const NavBar = (props) => {
   const handleChange = (e) => {
     setSearchQuery(e.target.value)
   }
+  
   return (
   <div id="navbar">
     <div id={"logo"}>

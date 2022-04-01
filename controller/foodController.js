@@ -29,6 +29,23 @@ const getRecipeByFire = async (req, res) => {
     return res.status(500).send(error.message)
   }
 }
+const getRecipeByTag = async (req, res) => {
+  try {
+    const { tagname } = req.params
+    const tag = await Tag.find({ tagName: tagname })
+    const recipes = await Recipe.find().populate('tags')
+    const selectedRecipe = recipes.filter((recipe) => {
+      for (let i = 0; i < recipes.length; i++) {
+        return recipe.tags[i].tagName === tag[0].tagName
+      }
+    })
+    console.log(selectedRecipe)
+
+    return res.status(200).json({ selectedRecipe })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
 
 const createRecipeTicket = async (req, res) => {
   try {
@@ -130,5 +147,6 @@ module.exports = {
   toggleFireTicketTrue,
   toggleFireTicketFalse,
   getRecipeByFire,
-  createTags
+  createTags,
+  getRecipeByTag
 }
