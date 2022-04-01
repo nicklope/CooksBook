@@ -2,14 +2,18 @@ import logo from '../images/481490.png'
 import firelogo from '../images/firelogo.png'
 import firelogored from '../images/firelogored.png'
 import { useNavigate } from 'react-router-dom'
-
+import { useState } from 'react'
 
 const NavBar = (props) => {
  
   const navigate = useNavigate()
 
-    
+  const [searchQuery, setSearchQuery] = useState('')
+  
 
+  const handleChange = (e) => {
+    setSearchQuery(e.target.value)
+  }
   return (
   <div id="navbar">
     <div id={"logo"}>
@@ -29,9 +33,9 @@ const NavBar = (props) => {
       <form>
         <div id='search-input'>
           <label>
-            <input type="text" name="search" id="search-bar"/>
+            <input type="text" name="search" id="search-bar" onChange={(e) => handleChange(e)} />
           </label>
-          <input type="submit" value="go" id="submit-button"/>
+          <input type="submit" value="go" id="submit-button" onClick={()=> navigate(`/search/${searchQuery}`)}/>
         </div>
       </form>
     </div>
