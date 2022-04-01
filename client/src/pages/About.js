@@ -18,6 +18,21 @@ const About = () => {
           pictures of food and recipes.
         </h2>
         <h1 id="about-title">
+          A <em>Simple Mission</em>
+        </h1>
+        <h2 id="first-block">
+          My mission while developing cooksbook was to make a social site for
+          foodies that is simple, clean, and functional (
+          <em>functional is pending</em>). This mission stemmed from the fact
+          that everytime I looked for a recipe online, every site I found was a
+          bogged down mess of ads, personal stories, and other garbage.
+          Cooksbook is clean. It gives users easy access to the recipes their
+          looking for. I didn't develop this site with an option to add your
+          personal story about your vacation in Italy (
+          <em>No one wants to hear it, anyway</em>). Think about cooksbook as a
+          recipe blog where the fat has been trimmed.
+        </h2>
+        <h1 id="about-title">
           Navigating <em>The Rack</em>
         </h1>
         <h2 id="first-block">
@@ -45,7 +60,11 @@ const About = () => {
         </h1>
         <h2 id="first-block">
           If you've visited The Rail, you'll notice a fire logo at the end of
-          each ticket. Clicking the
+          each ticket. Clicking the fire logo fastens the Ticket to The Fire
+          Rail. The Fire Rail can be accessed by clicking the logo in The Rack.
+          The Fire Rail is designed to store Tickets you want to easily
+          resvisit. To remove from The Fire Rail, simply click the fire logo at
+          the end of the ticket once more.
         </h2>
       </div>
     </div>
