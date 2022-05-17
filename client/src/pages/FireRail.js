@@ -12,7 +12,7 @@ const FireRail = () => {
   const [fireChecker, setFireChecker] = useState(false)
 
   const grabRecipes = async () => {
-    const response = await axios.get('http://localhost:3001/fire')
+    const response = await axios.get('/fire')
     console.log(response.data.recipe)
     setRecipes(response.data.recipe)
   }
@@ -30,10 +30,10 @@ const FireRail = () => {
     navigate(`/newticket`)
   }
   const fireClickTrue = (ticketId) => {
-    axios.put(`http://localhost:3001/togglefiretrue/${ticketId}`)
+    axios.put(`/togglefiretrue/${ticketId}`)
   }
   const fireClickFalse = (ticketId) => {
-    axios.put(`http://localhost:3001/togglefirefalse/${ticketId}`)
+    axios.put(`/togglefirefalse/${ticketId}`)
   }
   let fire = true
   return (

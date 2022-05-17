@@ -13,7 +13,7 @@ const Line = () => {
   const [checked, setChecked] = useState(false)
 
   const grabRecipes = async () => {
-    const response = await axios.get('http://localhost:3001/recipes')
+    const response = await axios.get('/recipes')
     console.log(response.data.recipe)
     setRecipes(response.data.recipe)
   }
@@ -31,11 +31,11 @@ const Line = () => {
     navigate(`/newticket`)
   }
   const fireClickTrue = (ticketId) => {
-    axios.put(`http://localhost:3001/togglefiretrue/${ticketId}`)
+    axios.put(`/togglefiretrue/${ticketId}`)
     setFireChecker(true)
   }
   const fireClickFalse = (ticketId) => {
-    axios.put(`http://localhost:3001/togglefirefalse/${ticketId}`)
+    axios.put(`/togglefirefalse/${ticketId}`)
     setFireChecker(false)
   }
   let fire = 0

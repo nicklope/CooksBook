@@ -7,11 +7,11 @@ import fireLogoRed from '../images/firelogored.png'
 const Ticket = (props) => {
 const [checked, setChecked] = useState(false)
 const fireClickTrue = (ticketId) => {
-  axios.put(`http://localhost:3001/togglefiretrue/${ticketId}`)
+  axios.put(`/togglefiretrue/${ticketId}`)
   setChecked(true)
 }
 const fireClickFalse = (ticketId) => {
-  axios.put(`http://localhost:3001/togglefirefalse/${ticketId}`)
+  axios.put(`/togglefirefalse/${ticketId}`)
   setChecked(false)
 }
 useEffect(()=>{
