@@ -6,6 +6,7 @@
     "express": "^4.17.3",
     "mongoose": "^6.2.8",
     "morgan": "^1.10.0",
+    "react-scripts": "^5.0.1",
     "serve": "^13.0.2"
   },
   "devDependencies": {
