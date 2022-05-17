@@ -20,7 +20,6 @@
     "node": "16.13.2"
   },
   "scripts": {
-    "dev": "react-scripts start",
     "start": "node server.js",
     "build": "cd client && rm -rf build && npm install && npm run build",
     "test": "react-scripts test --env=jsdom",
