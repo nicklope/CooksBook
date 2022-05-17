@@ -168,6 +168,24 @@
   justify-content: center;
   align-items: center;
 }
+/* #fire-checkbox::before {
+  height: 70%;
+  padding: 3px;
+  background-image: url(../src/images/firelogo.png);
+}
+:checked + #fire-checkbox::before {
+  height: 70%;
+  padding: 3px;
+  background-image: url(../src/images/firelogored.png);
+} */
+#myCheckbox{
+  display: none;
+}
+#fire-checkbox{
+  height: 70%;
+  padding: 3px;
+  
+}
 #fire-button {
   height: 70%;
   padding: 3px;

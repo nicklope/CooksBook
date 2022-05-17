@@ -1,8 +1,24 @@
 
 import noimage from '../images/442344.png'
-
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import fireLogo from '../images/firelogo.png'
+import fireLogoRed from '../images/firelogored.png'
 const Ticket = (props) => {
-
+const [checked, setChecked] = useState(false)
+const fireClickTrue = (ticketId) => {
+  axios.put(`http://localhost:3001/togglefiretrue/${ticketId}`)
+  setChecked(true)
+}
+const fireClickFalse = (ticketId) => {
+  axios.put(`http://localhost:3001/togglefirefalse/${ticketId}`)
+  setChecked(false)
+}
+useEffect(()=>{
+  if(props.fire){
+    setChecked(true)
+  }
+},[])
   return (
     <div id="ticket">
       <div id="ticket-start">
@@ -14,7 +30,11 @@ const Ticket = (props) => {
         <button id="view-ticket-button" onClick={props.onClick}>View Full Ticket</button>
       </div>
       <div id="ticket-end">
-        <img id='fire-button' onClick={props.fireClick} src={props.src} key={props.imgKey}/>
+        <input type="checkbox"  id="myCheckbox"  checked={checked}/>
+        <label for="myCheckbox" id="fire-checkbox"  >
+          <img  id="fire-button" src={checked ? fireLogoRed : fireLogo} onClick={ checked ? () => fireClickFalse(props.imgKey) : () => fireClickTrue(props.imgKey)}/>
+        </label>
+        {/* <img id='fire-button' onClick={props.fireClick} src={props.src} key={props.imgKey}/> */}
       </div>
     </div>
   )

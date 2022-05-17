@@ -9,7 +9,8 @@ import logo from '../images/481490.png'
 
 const Line = () => {
   const [recipes, setRecipes] = useState([])
-  const [fireChecker, setFireChecker] = useState(0)
+  const [fireChecker, setFireChecker] = useState(false)
+  const [checked, setChecked] = useState(false)
 
   const grabRecipes = async () => {
     const response = await axios.get('http://localhost:3001/recipes')
@@ -19,7 +20,7 @@ const Line = () => {
   useEffect(() => {
     grabRecipes()
     console.log('change')
-  }, [fireChecker])
+  }, [])
 
   let navigate = useNavigate()
 
@@ -31,9 +32,11 @@ const Line = () => {
   }
   const fireClickTrue = (ticketId) => {
     axios.put(`http://localhost:3001/togglefiretrue/${ticketId}`)
+    setFireChecker(true)
   }
   const fireClickFalse = (ticketId) => {
     axios.put(`http://localhost:3001/togglefirefalse/${ticketId}`)
+    setFireChecker(false)
   }
   let fire = 0
   return (
@@ -61,26 +64,10 @@ const Line = () => {
                 onClick={() => {
                   showTicket(recipe._id)
                 }}
-                fireClick={async () => {
-                  const response = await axios.get(
-                    `http://localhost:3001/recipe/${recipe._id}`
-                  )
-
-                  if (response.data.recipe.fire == false) {
-                    await fireClickTrue(recipe._id)
-                    fire++
-                    setFireChecker(fire)
-                    console.log(fireChecker)
-                  } else {
-                    await fireClickFalse(recipe._id)
-                    fire++
-                    setFireChecker(fire)
-                    console.log(fireChecker)
-                  }
-                }}
                 imgKey={recipe._id}
                 src={recipe.fireLogo}
                 key={recipe._id}
+                fire={recipe.fire}
               />
             ))}
         </div>

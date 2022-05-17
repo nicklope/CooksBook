@@ -62,25 +62,10 @@ const FireRail = () => {
                 onClick={() => {
                   showTicket(recipe._id)
                 }}
-                fireClick={async () => {
-                  const response = await axios.get(
-                    `http://localhost:3001/recipe/${recipe._id}`
-                  )
-
-                  if (response.data.recipe.fire == false) {
-                    fireClickTrue(recipe._id)
-                    fire = !fire
-                    setFireChecker(fire)
-                    console.log(fireChecker)
-                  } else {
-                    fireClickFalse(recipe._id)
-                    fire = !fire
-                    setFireChecker(fire)
-                    console.log(fireChecker)
-                  }
-                }}
+                imgKey={recipe._id}
                 src={recipe.fireLogo}
                 key={recipe._id}
+                fire={recipe.fire}
               />
             ))}
         </div>
